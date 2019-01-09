@@ -39,7 +39,8 @@ end
 
 def selects_the_category_names_and_pledge_amounts_of_all_pledges_in_the_music_category
 "SELECT projects.category, SUM(pledges.amount)
-FROM select_category_from_projectsINNER JOIN projects.id = pledges.project_id
+FROM proejcts
+INNER JOIN pledges ON projects.id = pledges.project_id
 HAVING projects.category = 'music'"
 end
 
